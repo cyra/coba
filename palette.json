@@ -1,0 +1,610 @@
+{
+  "coba wax": {
+    "background": {
+      "hex": "#f5f0e8",
+      "salubra": "*",
+      "name": "warm ground, on the yellow axis"
+    },
+    "foreground": {
+      "hex": "#2b3642",
+      "salubra": "*",
+      "name": "cool slate ink"
+    },
+    "bold": {
+      "hex": "#1b232c",
+      "salubra": "*",
+      "name": "cool slate ink, deepened"
+    },
+    "cursor": {
+      "hex": "#c95750",
+      "salubra": "*",
+      "name": "red accent"
+    },
+    "cursor_text": {
+      "hex": "#f5f0e8",
+      "salubra": "*",
+      "name": "warm ground, on the yellow axis"
+    },
+    "selection": {
+      "hex": "#e3dcd0",
+      "salubra": "*",
+      "name": "sunken, de-pinked"
+    },
+    "selected_text": {
+      "hex": "#2b3642",
+      "salubra": "*",
+      "name": "cool slate ink"
+    },
+    "link": {
+      "hex": "#395a8e",
+      "salubra": "4320K",
+      "name": "bleu outremer 59"
+    },
+    "badge": {
+      "hex": "#a33a29",
+      "salubra": "4320A",
+      "name": "rouge vermillon 59"
+    },
+    "tab": {
+      "hex": "#ebe4d9",
+      "salubra": "*",
+      "name": "panel, de-pinked"
+    },
+    "guide": {
+      "hex": "#e3dcd0",
+      "salubra": "*",
+      "name": "sunken, de-pinked"
+    },
+    "comment": {
+      "hex": "#65686f",
+      "salubra": "*",
+      "name": "cool neutral, darkened to read"
+    },
+    "panel": {
+      "hex": "#ebe4d9",
+      "salubra": "*",
+      "name": "panel, de-pinked"
+    },
+    "line": {
+      "hex": "#f0eae0",
+      "salubra": "*",
+      "name": "panel, lightened and de-pinked"
+    },
+    "ansi0": {
+      "hex": "#49443b",
+      "salubra": "32140",
+      "name": "ombre naturelle 31"
+    },
+    "ansi1": {
+      "hex": "#a33a29",
+      "salubra": "4320A",
+      "name": "rouge vermillon 59"
+    },
+    "ansi2": {
+      "hex": "#57633c",
+      "salubra": "*",
+      "name": "olive"
+    },
+    "ansi3": {
+      "hex": "#826417",
+      "salubra": "*",
+      "name": "ocre fonce"
+    },
+    "ansi4": {
+      "hex": "#0e2d58",
+      "salubra": "4320T",
+      "name": "bleu outremer fonce"
+    },
+    "ansi5": {
+      "hex": "#6c2b3b",
+      "salubra": "4320M",
+      "name": "le rubis"
+    },
+    "ansi6": {
+      "hex": "#2e747f",
+      "salubra": "*",
+      "name": "teal, off the blue it collided with"
+    },
+    "ansi7": {
+      "hex": "#7a7c81",
+      "salubra": "*",
+      "name": "cool neutral, darkened to read"
+    },
+    "ansi8": {
+      "hex": "#65686f",
+      "salubra": "*",
+      "name": "cool neutral, darkened to read"
+    },
+    "ansi9": {
+      "hex": "#b8493a",
+      "salubra": "*",
+      "name": "vermillon lightened toward the red accent"
+    },
+    "ansi10": {
+      "hex": "#6e764d",
+      "salubra": "*",
+      "name": "olive, lightened"
+    },
+    "ansi11": {
+      "hex": "#a4832a",
+      "salubra": "*",
+      "name": "amber-ochre"
+    },
+    "ansi12": {
+      "hex": "#395a8e",
+      "salubra": "4320K",
+      "name": "bleu outremer 59"
+    },
+    "ansi13": {
+      "hex": "#811c35",
+      "salubra": "32100",
+      "name": "rouge carmin"
+    },
+    "ansi14": {
+      "hex": "#5a8a93",
+      "salubra": "32031",
+      "name": "ceruleen vif"
+    },
+    "ansi15": {
+      "hex": "#8d8888",
+      "salubra": "*",
+      "name": "cool neutral, darkened to read"
+    }
+  },
+  "coba pine": {
+    "background": {
+      "hex": "#21302c",
+      "salubra": "*",
+      "name": "g0 lifted to L* 18, chroma 7"
+    },
+    "foreground": {
+      "hex": "#bfd7ce",
+      "salubra": "*",
+      "name": "txt, chroma pulled toward the ground"
+    },
+    "bold": {
+      "hex": "#eafff4",
+      "salubra": "*",
+      "name": "hot white"
+    },
+    "cursor": {
+      "hex": "#8fe6c0",
+      "salubra": "*",
+      "name": "mint"
+    },
+    "cursor_text": {
+      "hex": "#21302c",
+      "salubra": "*",
+      "name": "g0 lifted to L* 18, chroma 7"
+    },
+    "selection": {
+      "hex": "#404f4b",
+      "salubra": "*",
+      "name": "surface lifted"
+    },
+    "selected_text": {
+      "hex": "#eafff4",
+      "salubra": "*",
+      "name": "hot white"
+    },
+    "link": {
+      "hex": "#8fe6c0",
+      "salubra": "*",
+      "name": "mint"
+    },
+    "badge": {
+      "hex": "#e8a08a",
+      "salubra": "*",
+      "name": "err salmon"
+    },
+    "tab": {
+      "hex": "#101e1b",
+      "salubra": "*",
+      "name": "g0 shaded"
+    },
+    "guide": {
+      "hex": "#404f4b",
+      "salubra": "*",
+      "name": "surface lifted"
+    },
+    "comment": {
+      "hex": "#8ba296",
+      "salubra": "*",
+      "name": "txt-dim lifted"
+    },
+    "panel": {
+      "hex": "#101e1b",
+      "salubra": "*",
+      "name": "g0 shaded"
+    },
+    "line": {
+      "hex": "#2e3d3a",
+      "salubra": "*",
+      "name": "surface tint"
+    },
+    "ansi0": {
+      "hex": "#303f3b",
+      "salubra": "*",
+      "name": "surface shaded"
+    },
+    "ansi1": {
+      "hex": "#e8a08a",
+      "salubra": "*",
+      "name": "err salmon"
+    },
+    "ansi2": {
+      "hex": "#8fe6c0",
+      "salubra": "*",
+      "name": "mint"
+    },
+    "ansi3": {
+      "hex": "#f2b573",
+      "salubra": "4320L",
+      "name": "ocre jaune clair"
+    },
+    "ansi4": {
+      "hex": "#7facc6",
+      "salubra": "4320N",
+      "name": "bleu ceruleen 59"
+    },
+    "ansi5": {
+      "hex": "#de8da0",
+      "salubra": "4320C",
+      "name": "rose vif"
+    },
+    "ansi6": {
+      "hex": "#6db3ad",
+      "salubra": "*",
+      "name": "teal, ceruleen moyen shifted off the blue"
+    },
+    "ansi7": {
+      "hex": "#bfd7ce",
+      "salubra": "*",
+      "name": "txt, chroma pulled toward the ground"
+    },
+    "ansi8": {
+      "hex": "#8ba296",
+      "salubra": "*",
+      "name": "txt-dim lifted"
+    },
+    "ansi9": {
+      "hex": "#f0bcac",
+      "salubra": "*",
+      "name": "err salmon lightened"
+    },
+    "ansi10": {
+      "hex": "#d6ffee",
+      "salubra": "*",
+      "name": "hot mint"
+    },
+    "ansi11": {
+      "hex": "#f4bd48",
+      "salubra": "4320W",
+      "name": "le jaune vif"
+    },
+    "ansi12": {
+      "hex": "#96b4c9",
+      "salubra": "32021",
+      "name": "outremer moyen"
+    },
+    "ansi13": {
+      "hex": "#eba9bb",
+      "salubra": "*",
+      "name": "rose vif lightened"
+    },
+    "ansi14": {
+      "hex": "#99bdb8",
+      "salubra": "32033",
+      "name": "ceruleen clair"
+    },
+    "ansi15": {
+      "hex": "#eafff4",
+      "salubra": "*",
+      "name": "hot white"
+    }
+  },
+  "coba dawn": {
+    "background": {
+      "hex": "#ebf2f7",
+      "salubra": "*",
+      "name": "cool ground at L* 95 on the slate axis"
+    },
+    "foreground": {
+      "hex": "#303e47",
+      "salubra": "*",
+      "name": "slate ink"
+    },
+    "bold": {
+      "hex": "#1a242a",
+      "salubra": "*",
+      "name": "slate ink, deepened"
+    },
+    "cursor": {
+      "hex": "#00788b",
+      "salubra": "*",
+      "name": "deep teal accent"
+    },
+    "cursor_text": {
+      "hex": "#ebf2f7",
+      "salubra": "*",
+      "name": "cool ground at L* 95 on the slate axis"
+    },
+    "selection": {
+      "hex": "#ced7dd",
+      "salubra": "*",
+      "name": "ground sunk to L* 86"
+    },
+    "selected_text": {
+      "hex": "#1a242a",
+      "salubra": "*",
+      "name": "slate ink, deepened"
+    },
+    "link": {
+      "hex": "#0064a0",
+      "salubra": "*",
+      "name": "dusk blue, darkened for a light ground"
+    },
+    "badge": {
+      "hex": "#a93a2f",
+      "salubra": "*",
+      "name": "dusk red, darkened for a light ground"
+    },
+    "tab": {
+      "hex": "#dae2e8",
+      "salubra": "*",
+      "name": "panel at L* 90"
+    },
+    "guide": {
+      "hex": "#ced7dd",
+      "salubra": "*",
+      "name": "ground sunk to L* 86"
+    },
+    "comment": {
+      "hex": "#5f6a72",
+      "salubra": "*",
+      "name": "slate neutral, darkened to read"
+    },
+    "panel": {
+      "hex": "#dae2e8",
+      "salubra": "*",
+      "name": "panel at L* 90"
+    },
+    "line": {
+      "hex": "#e4eaf0",
+      "salubra": "*",
+      "name": "panel, lightened"
+    },
+    "ansi0": {
+      "hex": "#45545f",
+      "salubra": "*",
+      "name": "slate, near black"
+    },
+    "ansi1": {
+      "hex": "#a93a2f",
+      "salubra": "*",
+      "name": "dusk red, darkened"
+    },
+    "ansi2": {
+      "hex": "#006e47",
+      "salubra": "*",
+      "name": "dusk green, darkened"
+    },
+    "ansi3": {
+      "hex": "#795b16",
+      "salubra": "*",
+      "name": "dusk yellow, darkened"
+    },
+    "ansi4": {
+      "hex": "#0064a0",
+      "salubra": "*",
+      "name": "dusk blue, darkened"
+    },
+    "ansi5": {
+      "hex": "#a2386f",
+      "salubra": "*",
+      "name": "dusk magenta, darkened and rotated off the red"
+    },
+    "ansi6": {
+      "hex": "#00697d",
+      "salubra": "*",
+      "name": "dusk cyan, darkened"
+    },
+    "ansi7": {
+      "hex": "#738089",
+      "salubra": "*",
+      "name": "slate neutral"
+    },
+    "ansi8": {
+      "hex": "#5f6a72",
+      "salubra": "*",
+      "name": "slate neutral, darkened to read"
+    },
+    "ansi9": {
+      "hex": "#d35141",
+      "salubra": "*",
+      "name": "dusk bright red, darkened"
+    },
+    "ansi10": {
+      "hex": "#308c54",
+      "salubra": "*",
+      "name": "dusk bright green, darkened"
+    },
+    "ansi11": {
+      "hex": "#8c7c24",
+      "salubra": "*",
+      "name": "dusk bright yellow, darkened"
+    },
+    "ansi12": {
+      "hex": "#0082ca",
+      "salubra": "*",
+      "name": "dusk bright blue, darkened"
+    },
+    "ansi13": {
+      "hex": "#cc4e89",
+      "salubra": "*",
+      "name": "dusk bright magenta, darkened and rotated"
+    },
+    "ansi14": {
+      "hex": "#238b77",
+      "salubra": "*",
+      "name": "dusk bright cyan, darkened"
+    },
+    "ansi15": {
+      "hex": "#808a92",
+      "salubra": "*",
+      "name": "slate neutral, lightened"
+    }
+  },
+  "coba dusk": {
+    "background": {
+      "hex": "#243037",
+      "salubra": "*",
+      "name": "ground lifted to L* 19, slate"
+    },
+    "foreground": {
+      "hex": "#c1b8b0",
+      "salubra": "*",
+      "name": "cream, eased off a 13.5 ratio"
+    },
+    "bold": {
+      "hex": "#e3ddd7",
+      "salubra": "*",
+      "name": "hot cream, eased with the body"
+    },
+    "cursor": {
+      "hex": "#7bbac7",
+      "salubra": "*",
+      "name": "cyan"
+    },
+    "cursor_text": {
+      "hex": "#243037",
+      "salubra": "*",
+      "name": "ground lifted to L* 19, slate"
+    },
+    "selection": {
+      "hex": "#3d4b54",
+      "salubra": "*",
+      "name": "slate lifted to L* 31"
+    },
+    "selected_text": {
+      "hex": "#e3ddd7",
+      "salubra": "*",
+      "name": "hot cream, eased with the body"
+    },
+    "link": {
+      "hex": "#7bbac7",
+      "salubra": "*",
+      "name": "cyan"
+    },
+    "badge": {
+      "hex": "#ff5879",
+      "salubra": "*",
+      "name": "magenta"
+    },
+    "tab": {
+      "hex": "#151f25",
+      "salubra": "*",
+      "name": "slate shaded to L* 11"
+    },
+    "guide": {
+      "hex": "#3d4b54",
+      "salubra": "*",
+      "name": "slate lifted to L* 31"
+    },
+    "comment": {
+      "hex": "#9ba5ae",
+      "salubra": "*",
+      "name": "slate grey, on the ground's own hue"
+    },
+    "panel": {
+      "hex": "#151f25",
+      "salubra": "*",
+      "name": "slate shaded to L* 11"
+    },
+    "line": {
+      "hex": "#2e3a41",
+      "salubra": "*",
+      "name": "slate lifted one step"
+    },
+    "ansi0": {
+      "hex": "#303d46",
+      "salubra": "*",
+      "name": "shadow slot, slate at L* 25"
+    },
+    "ansi1": {
+      "hex": "#e67665",
+      "salubra": "*",
+      "name": "red, lifted and rotated off the magenta"
+    },
+    "ansi2": {
+      "hex": "#7cbf9e",
+      "salubra": "*",
+      "name": "green"
+    },
+    "ansi3": {
+      "hex": "#a4947c",
+      "salubra": "*",
+      "name": "yellow, lifted to clear 4.5"
+    },
+    "ansi4": {
+      "hex": "#7fa8d8",
+      "salubra": "*",
+      "name": "blue, split off the cyan it shared a hex with"
+    },
+    "ansi5": {
+      "hex": "#ff5c7c",
+      "salubra": "*",
+      "name": "magenta, a hair up to clear 4.5"
+    },
+    "ansi6": {
+      "hex": "#7bbac7",
+      "salubra": "*",
+      "name": "cyan"
+    },
+    "ansi7": {
+      "hex": "#c1b8b0",
+      "salubra": "*",
+      "name": "cream, eased off a 13.5 ratio"
+    },
+    "ansi8": {
+      "hex": "#9ba5ae",
+      "salubra": "*",
+      "name": "slate grey, on the ground's own hue"
+    },
+    "ansi9": {
+      "hex": "#ef5847",
+      "salubra": "*",
+      "name": "bright red"
+    },
+    "ansi10": {
+      "hex": "#a2d9b1",
+      "salubra": "*",
+      "name": "bright green"
+    },
+    "ansi11": {
+      "hex": "#bbae82",
+      "salubra": "*",
+      "name": "bright yellow, off the eased body text"
+    },
+    "ansi12": {
+      "hex": "#a8c4e8",
+      "salubra": "*",
+      "name": "blue lightened"
+    },
+    "ansi13": {
+      "hex": "#ff99a1",
+      "salubra": "*",
+      "name": "bright magenta"
+    },
+    "ansi14": {
+      "hex": "#dff0eb",
+      "salubra": "*",
+      "name": "bright cyan"
+    },
+    "ansi15": {
+      "hex": "#e3ddd7",
+      "salubra": "*",
+      "name": "hot cream, eased with the body"
+    }
+  }
+}

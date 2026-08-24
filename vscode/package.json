@@ -1,0 +1,35 @@
+{
+  "name": "coba",
+  "displayName": "coba",
+  "description": "Four terminal and editor themes inspired by Le Corbusier's Polychromie Architecturale.",
+  "version": "1.1.0",
+  "publisher": "cyra",
+  "license": "MIT",
+  "engines": { "vscode": "^1.70.0" },
+  "categories": ["Themes"],
+  "keywords": ["theme", "light", "dark", "le corbusier", "warm", "slate"],
+  "contributes": {
+    "themes": [
+      {
+        "label": "coba wax",
+        "uiTheme": "vs",
+        "path": "./themes/coba-wax-color-theme.json"
+      },
+      {
+        "label": "coba pine",
+        "uiTheme": "vs-dark",
+        "path": "./themes/coba-pine-color-theme.json"
+      },
+      {
+        "label": "coba dawn",
+        "uiTheme": "vs",
+        "path": "./themes/coba-dawn-color-theme.json"
+      },
+      {
+        "label": "coba dusk",
+        "uiTheme": "vs-dark",
+        "path": "./themes/coba-dusk-color-theme.json"
+      }
+    ]
+  }
+}

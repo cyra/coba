@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="247" viewBox="0 0 720 247" role="img" aria-label="coba pine colour scheme preview">
+<rect width="720" height="247" rx="6" fill="#21302c"/>
+<rect width="720" height="30" rx="6" fill="#101e1b"/>
+<rect y="24" width="720" height="6" fill="#101e1b"/>
+<circle cx="23" cy="15" r="4.5" fill="#e8a08a"/>
+<circle cx="38" cy="15" r="4.5" fill="#f2b573"/>
+<circle cx="53" cy="15" r="4.5" fill="#8fe6c0"/>
+<text x="702" y="19" text-anchor="end" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" fill="#8ba296">coba pine</text>
+<text font-size="13" xml:space="preserve" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">
+<tspan x="18" y="40" fill="#8ba296">~/dev/coba</tspan>
+<tspan x="18" y="61" fill="#8ba296">base </tspan><tspan fill="#de8da0">❯ </tspan><tspan fill="#8fe6c0">python3</tspan><tspan fill="#bfd7ce"> build.py </tspan><tspan fill="#6db3ad">--strict</tspan>
+<tspan x="18" y="82" fill="#bfd7ce">built iterm/, vscode/, octarine/ </tspan><tspan fill="#8ba296">(contrast ok)</tspan>
+<tspan x="18" y="103" fill="#8ba296">base </tspan><tspan fill="#de8da0">❯ </tspan><tspan fill="#8fe6c0">git</tspan><tspan fill="#bfd7ce"> status </tspan><tspan fill="#6db3ad">--short</tspan>
+<tspan x="18" y="124" fill="#f2b573"> M</tspan><tspan fill="#bfd7ce"> build.py</tspan>
+<tspan x="18" y="145" fill="#8fe6c0">??</tspan><tspan fill="#bfd7ce"> octarine/</tspan>
+<tspan x="18" y="166" fill="#8ba296">base </tspan><tspan fill="#de8da0">❯ </tspan><tspan fill="#8fe6c0">█</tspan>
+</text>
+<rect x="18.0" y="203" width="39.8" height="26" rx="2" fill="#303f3b"/>
+<rect x="60.8" y="203" width="39.8" height="26" rx="2" fill="#e8a08a"/>
+<rect x="103.5" y="203" width="39.8" height="26" rx="2" fill="#8fe6c0"/>
+<rect x="146.2" y="203" width="39.8" height="26" rx="2" fill="#f2b573"/>
+<rect x="189.0" y="203" width="39.8" height="26" rx="2" fill="#7facc6"/>
+<rect x="231.8" y="203" width="39.8" height="26" rx="2" fill="#de8da0"/>
+<rect x="274.5" y="203" width="39.8" height="26" rx="2" fill="#6db3ad"/>
+<rect x="317.2" y="203" width="39.8" height="26" rx="2" fill="#bfd7ce"/>
+<rect x="360.0" y="203" width="39.8" height="26" rx="2" fill="#8ba296"/>
+<rect x="402.8" y="203" width="39.8" height="26" rx="2" fill="#f0bcac"/>
+<rect x="445.5" y="203" width="39.8" height="26" rx="2" fill="#d6ffee"/>
+<rect x="488.2" y="203" width="39.8" height="26" rx="2" fill="#f4bd48"/>
+<rect x="531.0" y="203" width="39.8" height="26" rx="2" fill="#96b4c9"/>
+<rect x="573.8" y="203" width="39.8" height="26" rx="2" fill="#eba9bb"/>
+<rect x="616.5" y="203" width="39.8" height="26" rx="2" fill="#99bdb8"/>
+<rect x="659.2" y="203" width="39.8" height="26" rx="2" fill="#eafff4"/>
+</svg>
