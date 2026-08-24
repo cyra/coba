@@ -38,12 +38,8 @@ jobs:
       - name: Shell scripts parse
         run: sh -n install.sh
 
-  # Advisory, not a gate: shellcheck is not installed locally, so its findings
-  # on install.sh have never been seen. Promote to a required check once the
-  # first run is green.
   shellcheck:
     runs-on: ubuntu-latest
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
       - run: shellcheck install.sh

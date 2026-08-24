@@ -6,7 +6,9 @@ set -eu
 cd -- "$(dirname -- "$0")"
 
 # Not pgrep: it does not report the calling process's own ancestors, and this
-# script is normally run from inside iTerm2, so pgrep never sees it.
+# script is normally run from inside iTerm2, so pgrep never sees it. That is
+# exactly what SC2009 recommends, and it is wrong here.
+# shellcheck disable=SC2009
 if ps -Ao comm= 2>/dev/null | grep -q 'iTerm\.app/Contents/MacOS/iTerm2'; then
   echo "quit iTerm2 first: it rewrites its plist on exit and will clobber the margins" >&2
   exit 1
