@@ -8,23 +8,17 @@ switch together. **coba wax** and **coba pine** are the warm pair, a blush
 ground and a deep green. **coba dawn** and **coba dusk** are the cool pair, on
 a slate axis.
 
-The previews below follow your own GitHub theme: light readers get wax and
-dawn, dark readers get pine and dusk.
+**The warm pair**
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/coba-pine.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/coba-wax.svg">
-  <img alt="coba wax and coba pine, the warm pair" src="assets/coba-wax.svg">
-</picture>
+![coba wax](assets/coba-wax.svg)
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/coba-dusk.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/coba-dawn.svg">
-  <img alt="coba dawn and coba dusk, the cool pair" src="assets/coba-dawn.svg">
-</picture>
+![coba pine](assets/coba-pine.svg)
 
-All four: [wax](assets/coba-wax.svg) &middot; [pine](assets/coba-pine.svg)
-&middot; [dawn](assets/coba-dawn.svg) &middot; [dusk](assets/coba-dusk.svg)
+**The cool pair**
+
+![coba dawn](assets/coba-dawn.svg)
+
+![coba dusk](assets/coba-dusk.svg)
 
 <img src="https://images.adsttc.com/media/images/64ad/c59a/cb9c/4677/ee72/9aff/large_jpg/teoria-de-cores-de-le-corbusier-explorando-o-papel-da-cor-na-arquitetura_2.jpg?1689109922" alt="Unité d'Habitation, Marseille" width="100%">
 
@@ -103,7 +97,10 @@ re-run it.
 ANSI 1-6 at 4.5:1 against the ground, everything else at 3:1, and slots that
 mean different things held apart in dE so none of them read as one colour.
 `ansi0` is exempt, as the shadow slot. `build.py --strict` exits non-zero if
-anything slips.
+anything slips, and CI runs it on every push.
+
+Every measured figure is in [CONTRAST.md](CONTRAST.md), regenerated with the
+themes so it cannot drift from what is enforced.
 
 ## Rebuilding
 
@@ -114,9 +111,9 @@ anything slips.
 python3 build.py
 ```
 
-Writes `iterm/`, `vscode/themes/`, `octarine/`, `assets/` and `palette.json`.
-No dependencies. `python3 test_build.py` checks the colour maths that `check()`
-relies on.
+Writes `iterm/`, `vscode/themes/`, `octarine/`, `assets/`, `palette.json` and
+`CONTRAST.md`. No dependencies. `python3 test_build.py` checks the colour maths
+that the gate relies on.
 
 ## Credits
 

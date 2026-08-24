@@ -1,0 +1,49 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Colour maths
+        run: python3 test_build.py
+
+      - name: Contrast gate
+        run: python3 build.py --strict
+
+      # build.py is deterministic, so a rebuild must be a no-op. If it is not,
+      # someone edited a palette without regenerating, or edited generated
+      # output by hand, and the two have drifted.
+      - name: Committed output matches the palette
+        run: |
+          git diff --exit-code --stat || {
+            echo "::error::generated files are stale. Run 'python3 build.py' and commit the result."
+            exit 1
+          }
+
+      - name: Shell scripts parse
+        run: sh -n install.sh
+
+  # Advisory, not a gate: shellcheck is not installed locally, so its findings
+  # on install.sh have never been seen. Promote to a required check once the
+  # first run is green.
+  shellcheck:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - run: shellcheck install.sh
