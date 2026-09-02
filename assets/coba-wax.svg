@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="238" viewBox="0 0 720 238" role="img" aria-label="coba wax colour scheme preview">
+<rect width="720" height="238" rx="6" fill="#f5f0e8"/>
+<text font-size="13" xml:space="preserve" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">
+<tspan x="18" y="31" fill="#65686f">~/dev/coba</tspan>
+<tspan x="18" y="52" fill="#65686f">base </tspan><tspan fill="#6c2b3b">❯ </tspan><tspan fill="#57633c">python3</tspan><tspan fill="#2b3642"> build.py </tspan><tspan fill="#2e747f">--strict</tspan>
+<tspan x="18" y="73" fill="#2b3642">built iterm/, vscode/, octarine/ </tspan><tspan fill="#65686f">(contrast ok)</tspan>
+<tspan x="18" y="94" fill="#65686f">base </tspan><tspan fill="#6c2b3b">❯ </tspan><tspan fill="#57633c">git</tspan><tspan fill="#2b3642"> status </tspan><tspan fill="#2e747f">--short</tspan>
+<tspan x="18" y="115" fill="#826417"> M</tspan><tspan fill="#2b3642"> build.py</tspan>
+<tspan x="18" y="136" fill="#57633c">??</tspan><tspan fill="#2b3642"> octarine/</tspan>
+<tspan x="18" y="157" fill="#65686f">base </tspan><tspan fill="#6c2b3b">❯ </tspan><tspan fill="#c95750">█</tspan>
+</text>
+<rect x="18.0" y="194" width="39.8" height="26" rx="2" fill="#49443b"/>
+<rect x="60.8" y="194" width="39.8" height="26" rx="2" fill="#a33a29"/>
+<rect x="103.5" y="194" width="39.8" height="26" rx="2" fill="#57633c"/>
+<rect x="146.2" y="194" width="39.8" height="26" rx="2" fill="#826417"/>
+<rect x="189.0" y="194" width="39.8" height="26" rx="2" fill="#0e2d58"/>
+<rect x="231.8" y="194" width="39.8" height="26" rx="2" fill="#6c2b3b"/>
+<rect x="274.5" y="194" width="39.8" height="26" rx="2" fill="#2e747f"/>
+<rect x="317.2" y="194" width="39.8" height="26" rx="2" fill="#7a7c81"/>
+<rect x="360.0" y="194" width="39.8" height="26" rx="2" fill="#65686f"/>
+<rect x="402.8" y="194" width="39.8" height="26" rx="2" fill="#b8493a"/>
+<rect x="445.5" y="194" width="39.8" height="26" rx="2" fill="#6e764d"/>
+<rect x="488.2" y="194" width="39.8" height="26" rx="2" fill="#a4832a"/>
+<rect x="531.0" y="194" width="39.8" height="26" rx="2" fill="#395a8e"/>
+<rect x="573.8" y="194" width="39.8" height="26" rx="2" fill="#811c35"/>
+<rect x="616.5" y="194" width="39.8" height="26" rx="2" fill="#5a8a93"/>
+<rect x="659.2" y="194" width="39.8" height="26" rx="2" fill="#8d8888"/>
+</svg>
