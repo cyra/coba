@@ -1,0 +1,23 @@
+{
+    "autoclose": true,
+    "autoindent": true,
+    "colorscheme": "coba",
+    "cursorline": false,
+    "diffgutter": true,
+    "divchars": "│─",
+    "divreverse": false,
+    "filemanager.openonstart": true,
+    "hlsearch": true,
+    "ignorecase": true,
+    "indentchar": "┆",
+    "infobar": false,
+    "linter": true,
+    "ruler": true,
+    "savecursor": true,
+    "scrollmargin": 2,
+    "scrollspeed": 5,
+    "statusline": true,
+    "syntax": true,
+    "tabsize": 4,
+    "tabstospaces": false
+}

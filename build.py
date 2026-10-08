@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the coba themes for iTerm2, VS Code and Octarine from one palette.
+"""Generate the coba themes for iTerm2, VS Code, Micro, OpenCode and Octarine.
 
 Four schemes, all rooted in Le Corbusier's Polychromie Architecturale (Salubra,
 1931 + 1959) and taken further where it did not reach. coba wax is the warm one
@@ -517,6 +517,204 @@ def build_vscode():
             f.write("\n")
 
 
+# --- Micro ------------------------------------------------------------------
+MICRO_TERMINAL_THEME = """\
+color-link comment "brightblack"
+color-link constant "brightcyan"
+color-link identifier "brightmagenta"
+color-link statement "brightyellow"
+color-link preproc "magenta"
+color-link type "green"
+color-link special "cyan"
+color-link ignore "default"
+color-link error "brightred"
+color-link todo "brightred"
+color-link indent-char "brightblack"
+color-link line-number "brightblack"
+color-link current-line-number "default"
+color-link selection "default"
+color-link cursor-line "default"
+color-link divider "cyan,default"
+color-link scrollbar "brightblack"
+color-link message "default"
+color-link statusline.suggestions "default"
+color-link diff-added "green"
+color-link diff-modified "blue"
+color-link diff-deleted "red"
+color-link gutter-error "brightred"
+color-link gutter-warning "yellow"
+color-link statusline "default"
+color-link statusline.inactive "default"
+color-link tabbar "default"
+"""
+
+
+MICRO_SLOTS = {
+    "default": "foreground",
+    "comment": "comment",
+    "identifier": "foreground",
+    "constant": "ansi5",
+    "constant.string": "ansi2",
+    "constant.string.char": "ansi6",
+    "statement": "ansi1",
+    "symbol.operator": "comment",
+    "preproc": "ansi3",
+    "type": "ansi4",
+    "special": "ansi6",
+    "underlined": "link",
+    "error": "ansi9",
+    "todo": "ansi11",
+    "hlsearch": "ansi11",
+    "statusline": "foreground",
+    "tabbar": "foreground",
+    "indent-char": "line",
+    "line-number": "comment",
+    "current-line-number": "foreground",
+    "diff-added": "ansi2",
+    "diff-modified": "ansi4",
+    "diff-deleted": "ansi1",
+    "gutter-error": "ansi1",
+    "gutter-warning": "ansi3",
+    "cursor-line": "line",
+    "color-column": "line",
+    "match-brace": "cursor",
+    "tab-error": "ansi1",
+    "trailingws": "ansi1",
+}
+
+
+def micro_theme(s):
+    bg = sharp(s, "background")
+    lines = []
+    for group, slot in MICRO_SLOTS.items():
+        fg = sharp(s, slot)
+        if group in {"diff-added", "diff-modified", "diff-deleted", "cursor-line", "color-column",
+                     "tab-error", "trailingws"}:
+            lines.append(f'color-link {group} "{fg}"')
+        elif group == "hlsearch":
+            lines.append(f'color-link {group} "{bg},{fg}"')
+        elif group == "match-brace":
+            lines.append(f'color-link {group} "{bg},{fg}"')
+        else:
+            lines.append(f'color-link {group} "{fg},{bg}"')
+    lines.append(f'color-link error "bold {sharp(s, "ansi9")},{bg}"')
+    lines.append(f'color-link todo "bold {sharp(s, "ansi11")},{bg}"')
+    lines.append(f'color-link type.extended "default"')
+    return "\n".join(lines) + "\n"
+
+
+def build_micro():
+    out = os.path.join(HERE, "micro", "colorschemes")
+    os.makedirs(out, exist_ok=True)
+    with open(os.path.join(out, "coba.micro"), "w") as f:
+        f.write(MICRO_TERMINAL_THEME)
+    for slug, name in (("coba-wax", "coba wax"), ("coba-pine", "coba pine"),
+                       ("coba-dawn", "coba dawn"), ("coba-dusk", "coba dusk")):
+        with open(os.path.join(out, slug + ".micro"), "w") as f:
+            f.write(micro_theme(SCHEMES[name]))
+
+
+# --- OpenCode -------------------------------------------------------------
+# OpenCode themes carry both modes in one file. Keep the same two pairings as
+# the iTerm dynamic profiles: wax/pine for coba and dawn/dusk for coba-cool.
+OPENCODE_SLOTS = {
+    "primary": "cursor",
+    "secondary": "ansi5",
+    "accent": "ansi6",
+    "error": "ansi1",
+    "warning": "ansi3",
+    "success": "ansi2",
+    "info": "ansi4",
+    "text": "foreground",
+    "textMuted": "comment",
+    "selectedListItemText": "cursor_text",
+    "background": "background",
+    "backgroundPanel": "panel",
+    "backgroundElement": "line",
+    "backgroundMenu": "panel",
+    "border": "guide",
+    "borderActive": "cursor",
+    "borderSubtle": "line",
+    "diffAdded": "ansi2",
+    "diffRemoved": "ansi1",
+    "diffContext": "comment",
+    "diffHunkHeader": "ansi4",
+    "diffHighlightAdded": "ansi10",
+    "diffHighlightRemoved": "ansi9",
+    "diffLineNumber": "comment",
+    "markdownText": "foreground",
+    "markdownHeading": "ansi4",
+    "markdownLink": "link",
+    "markdownLinkText": "cursor",
+    "markdownCode": "ansi2",
+    "markdownBlockQuote": "comment",
+    "markdownEmph": "ansi3",
+    "markdownStrong": "bold",
+    "markdownHorizontalRule": "guide",
+    "markdownListItem": "ansi4",
+    "markdownListEnumeration": "cursor",
+    "markdownImage": "link",
+    "markdownImageText": "cursor",
+    "markdownCodeBlock": "foreground",
+    "syntaxComment": "comment",
+    "syntaxKeyword": "ansi1",
+    "syntaxFunction": "ansi4",
+    "syntaxVariable": "foreground",
+    "syntaxString": "ansi2",
+    "syntaxNumber": "ansi5",
+    "syntaxType": "ansi6",
+    "syntaxOperator": "comment",
+    "syntaxPunctuation": "foreground",
+}
+
+
+def opencode_theme(light_name, dark_name):
+    light, dark = SCHEMES[light_name], SCHEMES[dark_name]
+    light_prefix, dark_prefix = light_name.split()[-1], dark_name.split()[-1]
+
+    def ref(prefix, slot):
+        return prefix + "".join(part.title() for part in slot.split("_"))
+
+    defs = {}
+    for prefix, scheme in ((light_prefix, light), (dark_prefix, dark)):
+        defs.update({ref(prefix, slot): sharp(scheme, slot) for slot in scheme})
+
+    def variant(slot):
+        return {"dark": ref(dark_prefix, slot), "light": ref(light_prefix, slot)}
+
+    theme = {name: variant(slot) for name, slot in OPENCODE_SLOTS.items()}
+
+    # Diff grounds need a tint, not a full-strength syntax colour. Dark modes
+    # can carry slightly more chroma before the code loses contrast.
+    for mode, prefix, scheme, amount in (
+        ("dark", dark_prefix, dark, 0.18),
+        ("light", light_prefix, light, 0.12),
+    ):
+        bg = hx(scheme, "background")
+        for change, slot in (("Added", "ansi2"), ("Removed", "ansi1")):
+            diff = f"{prefix}Diff{change}Bg"
+            line = f"{prefix}Diff{change}LineNumberBg"
+            defs[diff] = "#" + mix(bg, hx(scheme, slot), amount)
+            defs[line] = "#" + mix(bg, hx(scheme, slot), amount + 0.06)
+            theme.setdefault(f"diff{change}Bg", {})[mode] = diff
+            theme.setdefault(f"diff{change}LineNumberBg", {})[mode] = line
+
+    theme["diffContextBg"] = variant("line")
+    return {"$schema": "https://opencode.ai/theme.json", "defs": defs, "theme": theme}
+
+
+def build_opencode():
+    out = os.path.join(HERE, "opencode")
+    os.makedirs(out, exist_ok=True)
+    for filename, light, dark in (
+        ("coba.json", "coba wax", "coba pine"),
+        ("coba-cool.json", "coba dawn", "coba dusk"),
+    ):
+        with open(os.path.join(out, filename), "w") as f:
+            json.dump(opencode_theme(light, dark), f, indent=2)
+            f.write("\n")
+
+
 def build_preview(name, s, path):
     """One SVG per scheme: a terminal specimen over the 16 slots.
 
@@ -741,8 +939,10 @@ if __name__ == "__main__":
     ok = check(strict="--strict" in sys.argv)
     build_iterm()
     build_vscode()
+    build_micro()
+    build_opencode()
     build_octarine()
     build_previews()
     build_palette_json()
     build_contrast()
-    print("built iterm/, vscode/themes/, octarine/, assets/, palette.json, CONTRAST.md", "(contrast ok)" if ok else "(see warnings)")
+    print("built iterm/, vscode/themes/, micro/colorschemes/, opencode/, octarine/, assets/, palette.json, CONTRAST.md", "(contrast ok)" if ok else "(see warnings)")

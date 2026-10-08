@@ -1,0 +1,20 @@
+--- filemanager.lua
++++ filemanager.lua
+@@ -274,2 +274,2 @@
+-	-- An ASCII separator
+-	tree_view.Buf.EventHandler:Insert(buffer.Loc(0, 1), repeat_str("─", tree_view:GetView().Width) .. "\n")
++	-- Keep the spacer row without drawing a heavy separator.
++	tree_view.Buf.EventHandler:Insert(buffer.Loc(0, 1), "\n")
+@@ -1087,2 +1087,3 @@
+--- On click, open at the click's y
+-function preMousePress(view, event)
++-- On click, open the item under Micro's already-updated cursor. Micro 2.0 no
++-- longer passes a mouse event object to plugin callbacks.
++function onMousePress(view)
+@@ -1090,3 +1090,0 @@
+-		local x, y = event:Position()
+-		-- Fixes the y because softwrap messes with it
+-		local new_x, new_y = tree_view:GetMouseClickLocation(x, y)
+@@ -1095 +1093 @@
+-		try_open_at_y(new_y)
++		try_open_at_cursor()
