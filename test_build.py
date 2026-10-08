@@ -4,6 +4,8 @@
 check() guards the palettes. This guards check(): if contrast() or delta_e()
 were wrong, every scheme would pass a gate that means nothing.
 """
+import os
+
 import build as b
 
 
@@ -62,6 +64,31 @@ def test_octarine_sets_every_variable():
         assert len(v) == 27, f"{name} emits {len(v)} variables, expected 27"
         keys = keys or set(v)
         assert set(v) == keys, f"{name} emits a different variable set"
+
+
+def test_micro_themes_match_generated_files():
+    terminal = os.path.join(b.HERE, "micro", "colorschemes", "coba.micro")
+    assert open(terminal).read() == b.MICRO_TERMINAL_THEME
+
+    for slug, name in (("coba-wax", "coba wax"), ("coba-pine", "coba pine"),
+                       ("coba-dawn", "coba dawn"), ("coba-dusk", "coba dusk")):
+        path = os.path.join(b.HERE, "micro", "colorschemes", slug + ".micro")
+        assert open(path).read() == b.micro_theme(b.SCHEMES[name])
+
+
+def test_opencode_themes_are_complete_and_resolvable():
+    extra = {
+        "diffAddedBg", "diffRemovedBg", "diffContextBg",
+        "diffAddedLineNumberBg", "diffRemovedLineNumberBg",
+    }
+    expected = set(b.OPENCODE_SLOTS) | extra
+    for light, dark in (("coba wax", "coba pine"), ("coba dawn", "coba dusk")):
+        output = b.opencode_theme(light, dark)
+        assert set(output["theme"]) == expected
+        for name, value in output["theme"].items():
+            assert set(value) == {"dark", "light"}, f"{name} is not adaptive"
+            for reference in value.values():
+                assert reference in output["defs"], f"unresolved colour {reference}"
 
 
 if __name__ == "__main__":

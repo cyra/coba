@@ -1,0 +1,283 @@
+{
+  "$schema": "https://opencode.ai/theme.json",
+  "defs": {
+    "waxBackground": "#f5f0e8",
+    "waxForeground": "#2b3642",
+    "waxBold": "#1b232c",
+    "waxCursor": "#c95750",
+    "waxCursorText": "#f5f0e8",
+    "waxSelection": "#e3dcd0",
+    "waxSelectedText": "#2b3642",
+    "waxLink": "#395a8e",
+    "waxBadge": "#a33a29",
+    "waxTab": "#ebe4d9",
+    "waxGuide": "#e3dcd0",
+    "waxComment": "#65686f",
+    "waxPanel": "#ebe4d9",
+    "waxLine": "#f0eae0",
+    "waxAnsi0": "#49443b",
+    "waxAnsi1": "#a33a29",
+    "waxAnsi2": "#57633c",
+    "waxAnsi3": "#826417",
+    "waxAnsi4": "#0e2d58",
+    "waxAnsi5": "#6c2b3b",
+    "waxAnsi6": "#2e747f",
+    "waxAnsi7": "#7a7c81",
+    "waxAnsi8": "#65686f",
+    "waxAnsi9": "#b8493a",
+    "waxAnsi10": "#6e764d",
+    "waxAnsi11": "#a4832a",
+    "waxAnsi12": "#395a8e",
+    "waxAnsi13": "#811c35",
+    "waxAnsi14": "#5a8a93",
+    "waxAnsi15": "#8d8888",
+    "pineBackground": "#21302c",
+    "pineForeground": "#bfd7ce",
+    "pineBold": "#eafff4",
+    "pineCursor": "#8fe6c0",
+    "pineCursorText": "#21302c",
+    "pineSelection": "#404f4b",
+    "pineSelectedText": "#eafff4",
+    "pineLink": "#8fe6c0",
+    "pineBadge": "#e8a08a",
+    "pineTab": "#101e1b",
+    "pineGuide": "#404f4b",
+    "pineComment": "#8ba296",
+    "pinePanel": "#101e1b",
+    "pineLine": "#2e3d3a",
+    "pineAnsi0": "#303f3b",
+    "pineAnsi1": "#e8a08a",
+    "pineAnsi2": "#8fe6c0",
+    "pineAnsi3": "#f2b573",
+    "pineAnsi4": "#7facc6",
+    "pineAnsi5": "#de8da0",
+    "pineAnsi6": "#6db3ad",
+    "pineAnsi7": "#bfd7ce",
+    "pineAnsi8": "#8ba296",
+    "pineAnsi9": "#f0bcac",
+    "pineAnsi10": "#d6ffee",
+    "pineAnsi11": "#f4bd48",
+    "pineAnsi12": "#96b4c9",
+    "pineAnsi13": "#eba9bb",
+    "pineAnsi14": "#99bdb8",
+    "pineAnsi15": "#eafff4",
+    "pineDiffAddedBg": "#355147",
+    "pineDiffAddedLineNumberBg": "#3b5c50",
+    "pineDiffRemovedBg": "#45443d",
+    "pineDiffRemovedLineNumberBg": "#514b43",
+    "waxDiffAddedBg": "#e2dfd3",
+    "waxDiffAddedLineNumberBg": "#d9d7c9",
+    "waxDiffRemovedBg": "#ebdad1",
+    "waxDiffRemovedLineNumberBg": "#e6cfc6"
+  },
+  "theme": {
+    "primary": {
+      "dark": "pineCursor",
+      "light": "waxCursor"
+    },
+    "secondary": {
+      "dark": "pineAnsi5",
+      "light": "waxAnsi5"
+    },
+    "accent": {
+      "dark": "pineAnsi6",
+      "light": "waxAnsi6"
+    },
+    "error": {
+      "dark": "pineAnsi1",
+      "light": "waxAnsi1"
+    },
+    "warning": {
+      "dark": "pineAnsi3",
+      "light": "waxAnsi3"
+    },
+    "success": {
+      "dark": "pineAnsi2",
+      "light": "waxAnsi2"
+    },
+    "info": {
+      "dark": "pineAnsi4",
+      "light": "waxAnsi4"
+    },
+    "text": {
+      "dark": "pineForeground",
+      "light": "waxForeground"
+    },
+    "textMuted": {
+      "dark": "pineComment",
+      "light": "waxComment"
+    },
+    "selectedListItemText": {
+      "dark": "pineCursorText",
+      "light": "waxCursorText"
+    },
+    "background": {
+      "dark": "pineBackground",
+      "light": "waxBackground"
+    },
+    "backgroundPanel": {
+      "dark": "pinePanel",
+      "light": "waxPanel"
+    },
+    "backgroundElement": {
+      "dark": "pineLine",
+      "light": "waxLine"
+    },
+    "backgroundMenu": {
+      "dark": "pinePanel",
+      "light": "waxPanel"
+    },
+    "border": {
+      "dark": "pineGuide",
+      "light": "waxGuide"
+    },
+    "borderActive": {
+      "dark": "pineCursor",
+      "light": "waxCursor"
+    },
+    "borderSubtle": {
+      "dark": "pineLine",
+      "light": "waxLine"
+    },
+    "diffAdded": {
+      "dark": "pineAnsi2",
+      "light": "waxAnsi2"
+    },
+    "diffRemoved": {
+      "dark": "pineAnsi1",
+      "light": "waxAnsi1"
+    },
+    "diffContext": {
+      "dark": "pineComment",
+      "light": "waxComment"
+    },
+    "diffHunkHeader": {
+      "dark": "pineAnsi4",
+      "light": "waxAnsi4"
+    },
+    "diffHighlightAdded": {
+      "dark": "pineAnsi10",
+      "light": "waxAnsi10"
+    },
+    "diffHighlightRemoved": {
+      "dark": "pineAnsi9",
+      "light": "waxAnsi9"
+    },
+    "diffLineNumber": {
+      "dark": "pineComment",
+      "light": "waxComment"
+    },
+    "markdownText": {
+      "dark": "pineForeground",
+      "light": "waxForeground"
+    },
+    "markdownHeading": {
+      "dark": "pineAnsi4",
+      "light": "waxAnsi4"
+    },
+    "markdownLink": {
+      "dark": "pineLink",
+      "light": "waxLink"
+    },
+    "markdownLinkText": {
+      "dark": "pineCursor",
+      "light": "waxCursor"
+    },
+    "markdownCode": {
+      "dark": "pineAnsi2",
+      "light": "waxAnsi2"
+    },
+    "markdownBlockQuote": {
+      "dark": "pineComment",
+      "light": "waxComment"
+    },
+    "markdownEmph": {
+      "dark": "pineAnsi3",
+      "light": "waxAnsi3"
+    },
+    "markdownStrong": {
+      "dark": "pineBold",
+      "light": "waxBold"
+    },
+    "markdownHorizontalRule": {
+      "dark": "pineGuide",
+      "light": "waxGuide"
+    },
+    "markdownListItem": {
+      "dark": "pineAnsi4",
+      "light": "waxAnsi4"
+    },
+    "markdownListEnumeration": {
+      "dark": "pineCursor",
+      "light": "waxCursor"
+    },
+    "markdownImage": {
+      "dark": "pineLink",
+      "light": "waxLink"
+    },
+    "markdownImageText": {
+      "dark": "pineCursor",
+      "light": "waxCursor"
+    },
+    "markdownCodeBlock": {
+      "dark": "pineForeground",
+      "light": "waxForeground"
+    },
+    "syntaxComment": {
+      "dark": "pineComment",
+      "light": "waxComment"
+    },
+    "syntaxKeyword": {
+      "dark": "pineAnsi1",
+      "light": "waxAnsi1"
+    },
+    "syntaxFunction": {
+      "dark": "pineAnsi4",
+      "light": "waxAnsi4"
+    },
+    "syntaxVariable": {
+      "dark": "pineForeground",
+      "light": "waxForeground"
+    },
+    "syntaxString": {
+      "dark": "pineAnsi2",
+      "light": "waxAnsi2"
+    },
+    "syntaxNumber": {
+      "dark": "pineAnsi5",
+      "light": "waxAnsi5"
+    },
+    "syntaxType": {
+      "dark": "pineAnsi6",
+      "light": "waxAnsi6"
+    },
+    "syntaxOperator": {
+      "dark": "pineComment",
+      "light": "waxComment"
+    },
+    "syntaxPunctuation": {
+      "dark": "pineForeground",
+      "light": "waxForeground"
+    },
+    "diffAddedBg": {
+      "dark": "pineDiffAddedBg",
+      "light": "waxDiffAddedBg"
+    },
+    "diffAddedLineNumberBg": {
+      "dark": "pineDiffAddedLineNumberBg",
+      "light": "waxDiffAddedLineNumberBg"
+    },
+    "diffRemovedBg": {
+      "dark": "pineDiffRemovedBg",
+      "light": "waxDiffRemovedBg"
+    },
+    "diffRemovedLineNumberBg": {
+      "dark": "pineDiffRemovedLineNumberBg",
+      "light": "waxDiffRemovedLineNumberBg"
+    },
+    "diffContextBg": {
+      "dark": "pineLine",
+      "light": "waxLine"
+    }
+  }
+}

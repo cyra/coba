@@ -51,6 +51,32 @@ uninstalled folder names in `.obsolete` and never loads that name again.
 Restart VS Code, then Cmd+K Cmd+T and pick **coba wax**, **coba pine**,
 **coba dawn** or **coba dusk**. Cursor uses `~/.cursor/extensions/` instead.
 
+**OpenCode**
+
+```sh
+mkdir -p ~/.config/opencode/themes
+cp opencode/*.json ~/.config/opencode/themes/
+```
+
+Run `/theme` and pick **coba** for wax/pine or **coba-cool** for dawn/dusk.
+Each follows the light/dark mode OpenCode detects from the terminal.
+
+**Micro**
+
+```sh
+mkdir -p ~/.config/micro/colorschemes
+cp micro/colorschemes/*.micro ~/.config/micro/colorschemes/
+cp micro/settings.json ~/.config/micro/settings.json
+micro -plugin install filemanager
+patch -N ~/.config/micro/plug/filemanager/filemanager.lua < micro/filemanager.patch
+```
+
+The default `coba` scheme uses ANSI colours, so it follows the active Coba
+terminal profile. Fixed `coba-wax`, `coba-pine`, `coba-dawn` and `coba-dusk`
+variants are also included. The file tree opens automatically; run `tree` from
+Micro's command bar to toggle it. The small patch fixes the plugin's Micro 2.0
+mouse callback and removes its heavy horizontal rule.
+
 **Octarine**
 
 ```sh
@@ -120,9 +146,9 @@ themes so it cannot drift from what is enforced.
 python3 build.py
 ```
 
-Writes `iterm/`, `vscode/themes/`, `octarine/`, `assets/`, `palette.json` and
-`CONTRAST.md`. No dependencies. `python3 test_build.py` checks the colour maths
-that the gate relies on.
+Writes `iterm/`, `vscode/themes/`, `micro/colorschemes/`, `opencode/`, `octarine/`, `assets/`,
+`palette.json` and `CONTRAST.md`. No dependencies. `python3 test_build.py`
+checks the colour maths that the gate relies on.
 
 ## Credits
 

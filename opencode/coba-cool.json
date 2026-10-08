@@ -1,0 +1,283 @@
+{
+  "$schema": "https://opencode.ai/theme.json",
+  "defs": {
+    "dawnBackground": "#ebf2f7",
+    "dawnForeground": "#303e47",
+    "dawnBold": "#1a242a",
+    "dawnCursor": "#00788b",
+    "dawnCursorText": "#ebf2f7",
+    "dawnSelection": "#ced7dd",
+    "dawnSelectedText": "#1a242a",
+    "dawnLink": "#0064a0",
+    "dawnBadge": "#a93a2f",
+    "dawnTab": "#dae2e8",
+    "dawnGuide": "#ced7dd",
+    "dawnComment": "#5f6a72",
+    "dawnPanel": "#dae2e8",
+    "dawnLine": "#e4eaf0",
+    "dawnAnsi0": "#45545f",
+    "dawnAnsi1": "#a93a2f",
+    "dawnAnsi2": "#006e47",
+    "dawnAnsi3": "#795b16",
+    "dawnAnsi4": "#0064a0",
+    "dawnAnsi5": "#a2386f",
+    "dawnAnsi6": "#00697d",
+    "dawnAnsi7": "#738089",
+    "dawnAnsi8": "#5f6a72",
+    "dawnAnsi9": "#d35141",
+    "dawnAnsi10": "#308c54",
+    "dawnAnsi11": "#8c7c24",
+    "dawnAnsi12": "#0082ca",
+    "dawnAnsi13": "#cc4e89",
+    "dawnAnsi14": "#238b77",
+    "dawnAnsi15": "#808a92",
+    "duskBackground": "#243037",
+    "duskForeground": "#c1b8b0",
+    "duskBold": "#e3ddd7",
+    "duskCursor": "#7bbac7",
+    "duskCursorText": "#243037",
+    "duskSelection": "#3d4b54",
+    "duskSelectedText": "#e3ddd7",
+    "duskLink": "#7bbac7",
+    "duskBadge": "#ff5879",
+    "duskTab": "#151f25",
+    "duskGuide": "#3d4b54",
+    "duskComment": "#9ba5ae",
+    "duskPanel": "#151f25",
+    "duskLine": "#2e3a41",
+    "duskAnsi0": "#303d46",
+    "duskAnsi1": "#e67665",
+    "duskAnsi2": "#7cbf9e",
+    "duskAnsi3": "#a4947c",
+    "duskAnsi4": "#7fa8d8",
+    "duskAnsi5": "#ff5c7c",
+    "duskAnsi6": "#7bbac7",
+    "duskAnsi7": "#c1b8b0",
+    "duskAnsi8": "#9ba5ae",
+    "duskAnsi9": "#ef5847",
+    "duskAnsi10": "#a2d9b1",
+    "duskAnsi11": "#bbae82",
+    "duskAnsi12": "#a8c4e8",
+    "duskAnsi13": "#ff99a1",
+    "duskAnsi14": "#dff0eb",
+    "duskAnsi15": "#e3ddd7",
+    "duskDiffAddedBg": "#344a4a",
+    "duskDiffAddedLineNumberBg": "#395250",
+    "duskDiffRemovedBg": "#473d3f",
+    "duskDiffRemovedLineNumberBg": "#534142",
+    "dawnDiffAddedBg": "#cfe2e2",
+    "dawnDiffAddedLineNumberBg": "#c1dad7",
+    "dawnDiffRemovedBg": "#e3dcdf",
+    "dawnDiffRemovedLineNumberBg": "#dfd1d3"
+  },
+  "theme": {
+    "primary": {
+      "dark": "duskCursor",
+      "light": "dawnCursor"
+    },
+    "secondary": {
+      "dark": "duskAnsi5",
+      "light": "dawnAnsi5"
+    },
+    "accent": {
+      "dark": "duskAnsi6",
+      "light": "dawnAnsi6"
+    },
+    "error": {
+      "dark": "duskAnsi1",
+      "light": "dawnAnsi1"
+    },
+    "warning": {
+      "dark": "duskAnsi3",
+      "light": "dawnAnsi3"
+    },
+    "success": {
+      "dark": "duskAnsi2",
+      "light": "dawnAnsi2"
+    },
+    "info": {
+      "dark": "duskAnsi4",
+      "light": "dawnAnsi4"
+    },
+    "text": {
+      "dark": "duskForeground",
+      "light": "dawnForeground"
+    },
+    "textMuted": {
+      "dark": "duskComment",
+      "light": "dawnComment"
+    },
+    "selectedListItemText": {
+      "dark": "duskCursorText",
+      "light": "dawnCursorText"
+    },
+    "background": {
+      "dark": "duskBackground",
+      "light": "dawnBackground"
+    },
+    "backgroundPanel": {
+      "dark": "duskPanel",
+      "light": "dawnPanel"
+    },
+    "backgroundElement": {
+      "dark": "duskLine",
+      "light": "dawnLine"
+    },
+    "backgroundMenu": {
+      "dark": "duskPanel",
+      "light": "dawnPanel"
+    },
+    "border": {
+      "dark": "duskGuide",
+      "light": "dawnGuide"
+    },
+    "borderActive": {
+      "dark": "duskCursor",
+      "light": "dawnCursor"
+    },
+    "borderSubtle": {
+      "dark": "duskLine",
+      "light": "dawnLine"
+    },
+    "diffAdded": {
+      "dark": "duskAnsi2",
+      "light": "dawnAnsi2"
+    },
+    "diffRemoved": {
+      "dark": "duskAnsi1",
+      "light": "dawnAnsi1"
+    },
+    "diffContext": {
+      "dark": "duskComment",
+      "light": "dawnComment"
+    },
+    "diffHunkHeader": {
+      "dark": "duskAnsi4",
+      "light": "dawnAnsi4"
+    },
+    "diffHighlightAdded": {
+      "dark": "duskAnsi10",
+      "light": "dawnAnsi10"
+    },
+    "diffHighlightRemoved": {
+      "dark": "duskAnsi9",
+      "light": "dawnAnsi9"
+    },
+    "diffLineNumber": {
+      "dark": "duskComment",
+      "light": "dawnComment"
+    },
+    "markdownText": {
+      "dark": "duskForeground",
+      "light": "dawnForeground"
+    },
+    "markdownHeading": {
+      "dark": "duskAnsi4",
+      "light": "dawnAnsi4"
+    },
+    "markdownLink": {
+      "dark": "duskLink",
+      "light": "dawnLink"
+    },
+    "markdownLinkText": {
+      "dark": "duskCursor",
+      "light": "dawnCursor"
+    },
+    "markdownCode": {
+      "dark": "duskAnsi2",
+      "light": "dawnAnsi2"
+    },
+    "markdownBlockQuote": {
+      "dark": "duskComment",
+      "light": "dawnComment"
+    },
+    "markdownEmph": {
+      "dark": "duskAnsi3",
+      "light": "dawnAnsi3"
+    },
+    "markdownStrong": {
+      "dark": "duskBold",
+      "light": "dawnBold"
+    },
+    "markdownHorizontalRule": {
+      "dark": "duskGuide",
+      "light": "dawnGuide"
+    },
+    "markdownListItem": {
+      "dark": "duskAnsi4",
+      "light": "dawnAnsi4"
+    },
+    "markdownListEnumeration": {
+      "dark": "duskCursor",
+      "light": "dawnCursor"
+    },
+    "markdownImage": {
+      "dark": "duskLink",
+      "light": "dawnLink"
+    },
+    "markdownImageText": {
+      "dark": "duskCursor",
+      "light": "dawnCursor"
+    },
+    "markdownCodeBlock": {
+      "dark": "duskForeground",
+      "light": "dawnForeground"
+    },
+    "syntaxComment": {
+      "dark": "duskComment",
+      "light": "dawnComment"
+    },
+    "syntaxKeyword": {
+      "dark": "duskAnsi1",
+      "light": "dawnAnsi1"
+    },
+    "syntaxFunction": {
+      "dark": "duskAnsi4",
+      "light": "dawnAnsi4"
+    },
+    "syntaxVariable": {
+      "dark": "duskForeground",
+      "light": "dawnForeground"
+    },
+    "syntaxString": {
+      "dark": "duskAnsi2",
+      "light": "dawnAnsi2"
+    },
+    "syntaxNumber": {
+      "dark": "duskAnsi5",
+      "light": "dawnAnsi5"
+    },
+    "syntaxType": {
+      "dark": "duskAnsi6",
+      "light": "dawnAnsi6"
+    },
+    "syntaxOperator": {
+      "dark": "duskComment",
+      "light": "dawnComment"
+    },
+    "syntaxPunctuation": {
+      "dark": "duskForeground",
+      "light": "dawnForeground"
+    },
+    "diffAddedBg": {
+      "dark": "duskDiffAddedBg",
+      "light": "dawnDiffAddedBg"
+    },
+    "diffAddedLineNumberBg": {
+      "dark": "duskDiffAddedLineNumberBg",
+      "light": "dawnDiffAddedLineNumberBg"
+    },
+    "diffRemovedBg": {
+      "dark": "duskDiffRemovedBg",
+      "light": "dawnDiffRemovedBg"
+    },
+    "diffRemovedLineNumberBg": {
+      "dark": "duskDiffRemovedLineNumberBg",
+      "light": "dawnDiffRemovedLineNumberBg"
+    },
+    "diffContextBg": {
+      "dark": "duskLine",
+      "light": "dawnLine"
+    }
+  }
+}
