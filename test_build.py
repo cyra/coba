@@ -4,7 +4,9 @@
 check() guards the palettes. This guards check(): if contrast() or delta_e()
 were wrong, every scheme would pass a gate that means nothing.
 """
+import json
 import os
+from pathlib import Path
 
 import build as b
 
@@ -89,6 +91,22 @@ def test_opencode_themes_are_complete_and_resolvable():
             assert set(value) == {"dark", "light"}, f"{name} is not adaptive"
             for reference in value.values():
                 assert reference in output["defs"], f"unresolved colour {reference}"
+
+
+def test_glow_text_contrast():
+    for name, scheme in b.SCHEMES.items():
+        path = Path(b.HERE, "glow", name.replace(" ", "-") + ".json")
+        style = json.loads(path.read_text(encoding="utf-8"))
+        background = style["document"]["background_color"]
+        assert background == b.sharp(scheme, "background")
+        for group, rules in style.items():
+            if "color" in rules:
+                bg = rules.get("background_color", background)
+                assert b.contrast(rules["color"][1:], bg[1:]) >= 4.5, (name, group)
+        chroma = style["code_block"]["chroma"]
+        bg = chroma["text"]["background_color"]
+        for token, rules in chroma.items():
+            assert b.contrast(rules["color"][1:], bg[1:]) >= 4.5, (name, token)
 
 
 if __name__ == "__main__":

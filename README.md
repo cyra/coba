@@ -61,6 +61,35 @@ cp opencode/*.json ~/.config/opencode/themes/
 Run `/theme` and pick **coba** for wax/pine or **coba-cool** for dawn/dusk.
 Each follows the light/dark mode OpenCode detects from the terminal.
 
+**Glow**
+
+```sh
+./glow/coba-glow README.md
+```
+
+On macOS, `coba-glow` reads the system appearance on each launch and uses Wax
+in light mode or Pine in dark mode. To use it as your regular `glow` command,
+add this alias to `~/.zshrc` from the repository root:
+
+```sh
+printf 'alias glow=%q\n' "$PWD/glow/coba-glow" >> ~/.zshrc
+```
+
+Open a new shell to pick up the alias. Pass `-s` to override the selection for
+one invocation:
+
+```sh
+./glow/coba-glow -s ./glow/coba-dusk.json README.md
+```
+
+Pick `coba-wax.json`, `coba-pine.json`, `coba-dawn.json` or `coba-dusk.json`.
+To set a fixed default for Glow itself, run `glow config` and set `style:` to
+the absolute path of the JSON file.
+
+Glow's `style: auto` only switches between its built-in light and dark styles.
+[Automatic switching between custom styles](https://github.com/charmbracelet/glow/issues/1007)
+is an open feature request.
+
 **Micro**
 
 ```sh
@@ -146,7 +175,7 @@ themes so it cannot drift from what is enforced.
 python3 build.py
 ```
 
-Writes `iterm/`, `vscode/themes/`, `micro/colorschemes/`, `opencode/`, `octarine/`, `assets/`,
+Writes `iterm/`, `vscode/themes/`, `micro/colorschemes/`, `opencode/`, `glow/`, `octarine/`, `assets/`,
 `palette.json` and `CONTRAST.md`. No dependencies. `python3 test_build.py`
 checks the colour maths that the gate relies on.
 
