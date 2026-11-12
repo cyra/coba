@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the coba themes for iTerm2, VS Code, Micro, OpenCode and Octarine.
+"""Generate the coba themes for iTerm2, VS Code, Micro, OpenCode, Glow and Octarine.
 
 Four schemes, all rooted in Le Corbusier's Polychromie Architecturale (Salubra,
 1931 + 1959) and taken further where it did not reach. coba wax is the warm one
@@ -715,6 +715,71 @@ def build_opencode():
             f.write("\n")
 
 
+# --- Glow -----------------------------------------------------------------
+def glow_theme(s):
+    def color(slot, **style):
+        return {"color": sharp(s, slot), **style}
+
+    bg = sharp(s, "background")
+    chroma_slots = {
+        "error": "ansi1",
+        "comment": "comment",
+        "comment_preproc": "ansi3",
+        "keyword": "ansi1",
+        "keyword_type": "ansi4",
+        "operator": "foreground",
+        "name_builtin": "ansi6",
+        "name_class": "ansi4",
+        "name_constant": "ansi5",
+        "name_function": "ansi4",
+        "literal_number": "ansi5",
+        "literal_string": "ansi2",
+        "literal_string_escape": "ansi6",
+        "generic_deleted": "ansi1",
+        "generic_inserted": "ansi2",
+        "generic_subheading": "ansi4",
+    }
+    return {
+        "document": color("foreground", background_color=bg, margin=2,
+                          block_prefix="\n", block_suffix="\n"),
+        "heading": color("ansi4", bold=True, block_suffix="\n"),
+        "h1": color("bold", prefix="# "),
+        **{f"h{level}": {"prefix": "#" * level + " "} for level in range(2, 7)},
+        "block_quote": color("comment", indent=1, indent_token="│ "),
+        "list": {"level_indent": 2},
+        "item": {"block_prefix": "• "},
+        "enumeration": {"block_prefix": ". "},
+        "task": {"ticked": "[x] ", "unticked": "[ ] "},
+        "emph": {"italic": True},
+        "strong": color("bold", bold=True),
+        "strikethrough": {"crossed_out": True},
+        "hr": color("comment", format="\n────────\n"),
+        "link": color("link", underline=True),
+        "link_text": color("link", bold=True),
+        "image": color("link", underline=True),
+        "image_text": color("comment", format="Image: {{.text}} →"),
+        "code": color("ansi5", background_color=sharp(s, "panel"),
+                      prefix="\u00a0", suffix="\u00a0"),
+        "code_block": color("foreground", margin=2, chroma={
+            # Chroma's terminal formatter drops the theme-wide background.
+            "text": color("foreground", background_color=bg),
+            **{token: color(slot) for token, slot in chroma_slots.items()},
+        }),
+        "table": color("foreground", background_color=bg),
+        "definition_description": {"block_prefix": "\n• "},
+    }
+
+
+def build_glow():
+    out = os.path.join(HERE, "glow")
+    os.makedirs(out, exist_ok=True)
+    for name, scheme in SCHEMES.items():
+        filename = name.replace(" ", "-") + ".json"
+        with open(os.path.join(out, filename), "w", encoding="utf-8") as f:
+            json.dump(glow_theme(scheme), f, indent=2, ensure_ascii=False)
+            f.write("\n")
+
+
 def build_preview(name, s, path):
     """One SVG per scheme: a terminal specimen over the 16 slots.
 
@@ -941,8 +1006,9 @@ if __name__ == "__main__":
     build_vscode()
     build_micro()
     build_opencode()
+    build_glow()
     build_octarine()
     build_previews()
     build_palette_json()
     build_contrast()
-    print("built iterm/, vscode/themes/, micro/colorschemes/, opencode/, octarine/, assets/, palette.json, CONTRAST.md", "(contrast ok)" if ok else "(see warnings)")
+    print("built iterm/, vscode/themes/, micro/colorschemes/, opencode/, glow/, octarine/, assets/, palette.json, CONTRAST.md", "(contrast ok)" if ok else "(see warnings)")
