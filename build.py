@@ -11,6 +11,7 @@ of the 63, or "*" where it is shaded off them because no member of the set
 worked at that contrast.
 """
 import json, math, os, plistlib, sys
+from pathlib import Path
 
 WAX = {
     #  slot            hex        id       name
@@ -993,6 +994,122 @@ def build_contrast():
         f.write("\n".join(lines))
 
 
+# --- Velocity --------------------------------------------------------------
+
+VELOCITY_PAINTS = {
+    "light": ("coba dawn", "coba wax"),
+    "dark": ("coba dusk", "coba pine"),
+}
+
+
+def velocity_vars(name, mode):
+    scheme = SCHEMES[name]
+
+    def color(slot):
+        return sharp(scheme, slot)
+
+    def blend(a, b, ratio):
+        return "#" + mix(hx(scheme, a), hx(scheme, b), ratio)
+
+    panel, ground = color("panel"), color("background")
+    ink = color("foreground")
+    muted = blend("comment", "foreground", 0.22) if mode == "light" else color("comment")
+    accent_slot = {"coba wax": "badge", "coba dawn": "link"}.get(name, "cursor")
+    accent_rgb = ", ".join(str(int(color(accent_slot)[i:i+2], 16)) for i in (1, 3, 5))
+    accent = f"rgb({accent_rgb})"
+    accent_hover = blend(accent_slot, "bold", 0.08 if mode == "dark" else 0.15)
+
+    # Velocity uses the base ladder for the glass surfaces and chrome. Keep
+    # its gradients and translucency, and supply Coba colors at their stops.
+    ladder = {
+        "00": ground, "05": ground, "10": panel, "20": color("line"),
+        "25": blend("line", "selection", 0.5), "30": color("selection"),
+        "35": blend("selection", "comment", 0.18),
+        "40": blend("selection", "comment", 0.32),
+        "50": blend("selection", "comment", 0.60),
+        "55": blend("selection", "comment", 0.78), "60": color("comment"),
+        "70": muted, "80": blend("comment", "foreground", 0.62),
+        "90": ink, "100": color("bold"),
+    }
+    v = {f"color-base-{step}": value for step, value in ladder.items()}
+    for role, slot in zip(
+        ("red", "green", "yellow", "blue", "pink", "cyan", "orange", "purple"),
+        ("ansi1", "ansi2", "ansi3", "ansi4", "ansi5", "ansi6", "ansi3", "ansi5"),
+    ):
+        value = color(slot)
+        v[f"color-{role}"] = value
+        v[f"color-{role}-rgb"] = ", ".join(str(int(value[i:i+2], 16)) for i in (1, 3, 5))
+    v.update({
+        "background-primary": ground,
+        "background-primary-alt": color("line"),
+        "background-secondary": panel,
+        "background-modifier-border": color("guide"),
+        "background-modifier-border-focus": color("cursor"),
+        "bg-main-inner": ground,
+        "bg-main-outer": panel,
+        "settings-background": panel,
+        "modal-background": f"color-mix(in srgb, {ground} 88%, transparent)",
+        "modal-small-background": "var(--modal-background)",
+        "tab-right-fade-alt": f"linear-gradient(to left, {panel} 80%, transparent)",
+        "text-normal": ink,
+        "text-muted": muted,
+        "text-on-accent": ground,
+        "text-selection": color("selection"),
+        "text-accent": color("link"),
+        "text-accent-hover": color("link"),
+        "color-accent": accent,
+        "color-accent-1": accent,
+        "color-accent-2": accent_hover,
+        "color-accent-4": f"color-mix(in srgb, {accent} 14%, transparent)",
+        "interactive-accent": accent,
+        "interactive-accent-hover": accent_hover,
+        "link-color": color("link"),
+        "link-color-hover": color("link"),
+        "link-color-sidebar": color("link"),
+        "link-external-color": color("link"),
+        "link-external-color-hover": color("link"),
+        "code-background": color("line"),
+        "paint-image": f"linear-gradient(135deg, {ground} 20%, {panel} 62%, {color('link')} 145%)",
+        "paint-description": json.dumps(name),
+    })
+    v.update({f"h{i}-color": color("bold") for i in range(1, 7)})
+    return v
+
+
+def velocity_paint_rule(selector, name, mode):
+    properties = "\n".join(f"  --{key}: {value};"
+                           for key, value in velocity_vars(name, mode).items())
+    return f"{selector} {{\n{properties}\n}}"
+
+
+def build_velocity_snippet():
+    settings = ["/* @settings\nname: Coba palettes for Velocity\nid: coba-velocity-palettes\nsettings:"]
+    rules = []
+    for mode, names in VELOCITY_PAINTS.items():
+        settings.append(
+            f"  - id: coba-velocity-{mode}\n    title: {mode.title()} palette\n"
+            "    type: class-select\n    allowEmpty: false\n"
+            f"    default: {names[0].replace(' ', '-')}\n    options:\n"
+            "      - label: Use Velocity paint job\n"
+            f"        value: coba-velocity-stock-{mode}"
+        )
+        for index, name in enumerate(names):
+            slug = name.replace(" ", "-")
+            settings.append(f"      - label: {name}\n        value: {slug}")
+            selector = f"body.theme-{mode}.{slug}"
+            if index == 0:
+                alternate = names[1].replace(" ", "-")
+                selector += f",\nbody.theme-{mode}:not(.{alternate}, .coba-velocity-stock-{mode})"
+            rules.append(velocity_paint_rule(selector, name, mode))
+    settings.append("*/")
+    out = Path(HERE) / "obsidian" / "snippets"
+    out.mkdir(parents=True, exist_ok=True)
+    header = "/* Generated by build.py. Designed for Velocity 2.2.1. */"
+    (out / "coba-velocity-palettes.css").write_text(
+        "\n\n".join([header, "\n".join(settings), *rules]) + "\n", encoding="utf-8"
+    )
+
+
 def build_palette_json():
     with open(os.path.join(HERE, "palette.json"), "w") as f:
         json.dump({n: {k: {"hex": "#" + v[0], "salubra": v[1], "name": v[2]}
@@ -1010,5 +1127,6 @@ if __name__ == "__main__":
     build_octarine()
     build_previews()
     build_palette_json()
+    build_velocity_snippet()
     build_contrast()
-    print("built iterm/, vscode/themes/, micro/colorschemes/, opencode/, glow/, octarine/, assets/, palette.json, CONTRAST.md", "(contrast ok)" if ok else "(see warnings)")
+    print("built iterm/, vscode/themes/, micro/colorschemes/, opencode/, glow/, octarine/, obsidian/snippets/, assets/, palette.json, CONTRAST.md", "(contrast ok)" if ok else "(see warnings)")

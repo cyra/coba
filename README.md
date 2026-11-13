@@ -123,6 +123,27 @@ Settings > Theme Creator > Paste from Clipboard.
 Octarine themes are colour only: fonts are workspace settings, and code blocks
 are pinned to shiki's own themes.
 
+**Obsidian with Velocity**
+
+Select the original Velocity theme in Obsidian. Copy the
+[Coba palette snippet](obsidian/snippets/coba-velocity-palettes.css) into your
+vault's `.obsidian/snippets/` folder and enable it under **Settings → Appearance
+→ CSS snippets**.
+
+The snippet uses **coba dawn** in Light mode and **coba dusk** in Dark mode by
+default. With the [Style Settings plugin](https://community.obsidian.md/plugins/obsidian-style-settings)
+enabled, open **Coba palettes for Velocity** to choose a palette for each mode.
+
+| Obsidian mode | Default | Alternate |
+| --- | --- | --- |
+| Light | coba dawn | coba wax |
+| Dark | coba dusk | coba pine |
+
+In Velocity's own Quick Settings, use **Velocity Silver** in Light mode and
+**Velocity Gray** in Dark mode as the base paint jobs. To return to Velocity's
+own colors, select **Use Velocity paint job** for that mode. Disable the
+snippet when switching to another Obsidian theme. Verified with Velocity 2.2.1.
+
 **zsh**
 
 ```sh
@@ -175,7 +196,7 @@ themes so it cannot drift from what is enforced.
 python3 build.py
 ```
 
-Writes `iterm/`, `vscode/themes/`, `micro/colorschemes/`, `opencode/`, `glow/`, `octarine/`, `assets/`,
+Writes `iterm/`, `vscode/themes/`, `micro/colorschemes/`, `opencode/`, `glow/`, `octarine/`, `obsidian/snippets/`, `assets/`,
 `palette.json` and `CONTRAST.md`. No dependencies. `python3 test_build.py`
 checks the colour maths that the gate relies on.
 
