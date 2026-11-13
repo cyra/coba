@@ -109,6 +109,27 @@ def test_glow_text_contrast():
             assert b.contrast(rules["color"][1:], bg[1:]) >= 4.5, (name, token)
 
 
+def test_velocity_snippet_paint_options_and_text_contrast():
+    css = Path(b.HERE, "obsidian", "snippets", "coba-velocity-palettes.css").read_text(encoding="utf-8")
+    for mode, paints in b.VELOCITY_PAINTS.items():
+        options = css.split(f"id: coba-velocity-{mode}", 1)[1].split("  - id:", 1)[0].split("*/", 1)[0]
+        assert f"default: {paints[0].replace(' ', '-')}" in options
+        assert f"value: coba-velocity-stock-{mode}" in options
+        for paint in paints:
+            slug = paint.replace(" ", "-")
+            assert f"label: {paint}\n        value: {slug}\n" in options
+            block = css.split(f"body.theme-{mode}.{slug}", 1)[1].split("{", 1)[1].split("}", 1)[0]
+            props = dict(line.strip()[2:-1].split(": ", 1) for line in block.strip().splitlines())
+            assert props["background-primary"] == b.sharp(b.SCHEMES[paint], "background")
+            for ink, surface in (
+                ("text-normal", "background-primary"),
+                ("text-muted", "background-secondary"),
+                ("link-color", "background-primary"),
+                ("text-on-accent", "interactive-accent-hover"),
+            ):
+                assert b.contrast(props[ink][1:], props[surface][1:]) >= 4.5, (paint, ink)
+
+
 if __name__ == "__main__":
     tests = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     for t in tests:
